@@ -17,7 +17,6 @@
 using namespace std;
 
 int main() {
-
     // Shirts production testing
     cout << "Shirts production testing..." << endl;
     ShirtsProduction lines = ShirtsProduction(4, 5);
