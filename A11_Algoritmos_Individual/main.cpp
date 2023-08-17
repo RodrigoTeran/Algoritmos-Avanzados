@@ -43,7 +43,7 @@ int main() {
     // Not possible, so it fills zero
     assertValue(0, container.maxSodasPerFill(-1000));
 
-    // It takes no time to produce zero
+    // It takes no time to fill zero
     container.setContainerWidth(0.5);
     assertValue(0, container.maxSodasPerFill(0));
 
