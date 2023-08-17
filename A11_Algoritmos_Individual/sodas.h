@@ -72,7 +72,7 @@ void SodaProduction::setContainerHeight(float height) {
 */
 float SodaProduction::getContainerMililiters() {
     float radiusContainer = containerWidthMeters / 2;
-    float volumeMetersCube = pow(M_PI * radiusContainer, 2) * containerHeightMeters;
+    float volumeMetersCube = M_PI * pow(radiusContainer, 2) * containerHeightMeters;
     return volumeMetersCube * 1000000;
 };
 
@@ -92,7 +92,6 @@ int SodaProduction::maxSodasPerFill(float sodaMililiters) {
     int maxSodas = floor(containerMililiters / sodaMililiters);
     logSodasResult(maxSodas, containerWidthMeters, containerHeightMeters, sodaMililiters);
     return maxSodas;
-
 };
 
 /**

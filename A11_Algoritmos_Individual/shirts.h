@@ -60,33 +60,32 @@ int ShirtsProduction::daysToProduce(int numberShirts) {
         return 0;
     };
 
-    stringstream line1;
-    stringstream line2;
+    stringstream historyLine1;
+    stringstream historyLine2;
 
     int daysToProduce = 0;
     int missingShirts = numberShirts;
 
-    line1 << "Line 1: [";
-    line2 << "Line 2: [";
+    historyLine1 << "Line 1: [";
+    historyLine2 << "Line 2: [";
     while (missingShirts > 0) {
         missingShirts -= (shirtsPerDayLine1 + shirtsPerDayLine2);
-        if (daysToProduce == 0) {
-            line1 << shirtsPerDayLine1;
-            line2 << shirtsPerDayLine2;
-        } else {
-            line1 << ", " << shirtsPerDayLine1;
-            line2 << ", " << shirtsPerDayLine2;
-        }
+        if (daysToProduce != 0) {
+            historyLine1 << ", ";
+            historyLine2 << ", ";
+        };
+        historyLine1 << shirtsPerDayLine1;
+        historyLine2 << shirtsPerDayLine2;
         daysToProduce += 1;
 
         // Next day
         setProductionLines();
     };
 
-    line1 << "]";
-    line2 << "]";
+    historyLine1 << "]";
+    historyLine2 << "]";
 
-    logShirtsResult(daysToProduce, numberShirts, line1.str(), line2.str());
+    logShirtsResult(daysToProduce, numberShirts, historyLine1.str(), historyLine2.str());
     return daysToProduce;
 };
 
@@ -94,18 +93,18 @@ int ShirtsProduction::daysToProduce(int numberShirts) {
  * This function logs the result for the shirt function
  * @param daysToProduce - The number of days it took to produce those shirts
  * @param shirts - The number of shirts produced
- * @param line1 - String containing all the production of line 1 at different days
- * @param line2 - String containing all the production of line 2 at different days
+ * @param historyLine1 - String containing all the production of line 1 at different days
+ * @param historyLine2 - String containing all the production of line 2 at different days
 */
-void ShirtsProduction::logShirtsResult(int daysToProduce, int shirts, string line1, string line2) {
+void ShirtsProduction::logShirtsResult(int daysToProduce, int shirts, string historyLine1, string historyLine2) {
     cout << endl << "- It took " << daysToProduce << " day";
     if (daysToProduce != 1) {
         cout << "s";
     };
     cout << " to produce " << shirts << " shirts." << endl;
     cout << "Lines of production: " << endl;
-    cout << line1 << endl;
-    cout << line2 << endl;
+    cout << historyLine1 << endl;
+    cout << historyLine2 << endl;
 };
 
 #endif

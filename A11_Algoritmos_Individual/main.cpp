@@ -34,7 +34,7 @@ int main() {
     // Sodas production testing
     cout << "\n##### Sodas production testing #####" << endl;
     SodaProduction container = SodaProduction(1, 2);
-    assertValue(8224, container.maxSodasPerFill(600));
+    assertValue(2617, container.maxSodasPerFill(600));
 
     // Not possible, so it fills zero
     assertValue(0, container.maxSodasPerFill(-1000));
@@ -45,7 +45,7 @@ int main() {
 
     container.setContainerWidth(0.75);
     container.setContainerHeight(1);
-    assertValue(462, container.maxSodasPerFill(3000));
+    assertValue(147, container.maxSodasPerFill(3000));
 
     return 0;
 };
