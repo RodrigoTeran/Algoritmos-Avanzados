@@ -10,6 +10,7 @@
 */
 
 #include <iostream>
+#include <limits>
 #include "shirts.h"
 #include "sodas.h"
 #include "utils.h"
@@ -21,23 +22,30 @@ int main() {
     cout << "Shirts production testing..." << endl;
     ShirtsProduction lines = ShirtsProduction(4, 5);
     assertValue(4, lines.daysToProduce(30));
+
+    // Not possible, so it takes no time
     assertValue(0, lines.daysToProduce(-5));
 
+    // It takes no time to produce zero
     lines.setShirtsProduction1(5);
-    assertValue(6, lines.daysToProduce(55));
+    assertValue(0, lines.daysToProduce(0));
 
+    // Lines at zero production should be inf
     lines.setShirtsProduction1(0);
-    lines.setShirtsProduction2(10);
-    assertValue(10, lines.daysToProduce(100));
+    lines.setShirtsProduction2(0);
+    assertValue(numeric_limits<int>::max(), lines.daysToProduce(10));
     
     // Sodas production testing
     cout << "\nSodas production testing..." << endl;
     SodaProduction container = SodaProduction(1, 2);
     assertValue(8224, container.maxSodasPerFill(600));
-    assertValue(4934, container.maxSodasPerFill(1000));
 
+    // Not possible, so it fills zero
+    assertValue(0, container.maxSodasPerFill(-1000));
+
+    // It takes no time to produce zero
     container.setContainerWidth(0.5);
-    assertValue(4838, container.maxSodasPerFill(255));
+    assertValue(0, container.maxSodasPerFill(0));
 
     container.setContainerWidth(0.75);
     container.setContainerHeight(1);

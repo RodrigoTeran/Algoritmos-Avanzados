@@ -11,6 +11,7 @@
 #define SHIRTS_H
 
 #include <iostream>
+#include <limits>
 #include <tgmath.h>
 
 using namespace std;
@@ -72,6 +73,10 @@ int ShirtsProduction::daysToProduce(int numberShirts) {
         return 0;
     };
     int combinedProductionTime = shirtsPerDayLine1 + shirtsPerDayLine2;
+    if (combinedProductionTime == 0) {
+        // We don't want to divide by zero
+        return numeric_limits<int>::max();
+    };
     return ceil(1.0 * numberShirts / combinedProductionTime);
 };
 
