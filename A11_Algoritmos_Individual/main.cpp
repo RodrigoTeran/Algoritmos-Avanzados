@@ -19,24 +19,20 @@ using namespace std;
 
 int main() {
     // Shirts production testing
-    cout << "Shirts production testing..." << endl;
-    ShirtsProduction lines = ShirtsProduction(4, 5);
-    assertValue(4, lines.daysToProduce(30));
+    cout << "##### Shirts production testing #####" << endl;
+    ShirtsProduction lines = ShirtsProduction();
+    lines.daysToProduce(300);
 
     // Not possible, so it takes no time
     assertValue(0, lines.daysToProduce(-5));
 
     // It takes no time to produce zero
-    lines.setShirtsProduction1(5);
     assertValue(0, lines.daysToProduce(0));
 
-    // Lines at zero production should be inf
-    lines.setShirtsProduction1(0);
-    lines.setShirtsProduction2(0);
-    assertValue(numeric_limits<int>::max(), lines.daysToProduce(10));
+    lines.daysToProduce(400);
     
     // Sodas production testing
-    cout << "\nSodas production testing..." << endl;
+    cout << "\n##### Sodas production testing #####" << endl;
     SodaProduction container = SodaProduction(1, 2);
     assertValue(8224, container.maxSodasPerFill(600));
 

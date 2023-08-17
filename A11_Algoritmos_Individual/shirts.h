@@ -11,6 +11,8 @@
 #define SHIRTS_H
 
 #include <iostream>
+#include <sstream>
+#include <random>
 #include <limits>
 #include <tgmath.h>
 
@@ -21,45 +23,29 @@ class ShirtsProduction {
         int shirtsPerDayLine1;
         int shirtsPerDayLine2;
 
+        void setProductionLines();
+        void logShirtsResult(int, int, string, string);
+
     public:
         ShirtsProduction();
-        ShirtsProduction(int, int);
-        
-        void setShirtsProduction1(int);
-        void setShirtsProduction2(int);
-        
         int daysToProduce(int);
 };
 
 ShirtsProduction::ShirtsProduction() {
-    shirtsPerDayLine1 = 1;
-    shirtsPerDayLine2 = 1;
-};
-ShirtsProduction::ShirtsProduction(int ShirtsProduction1, int ShirtsProduction2) {
-    shirtsPerDayLine1 = ShirtsProduction1;
-    shirtsPerDayLine2 = ShirtsProduction2;
+    setProductionLines();
 };
 
 /**
- * This function sets the number of shirts the line 1 can produce in one day
- * @param shirtsProduction - The number of shirts that this line can produce in one day
+ * This function sets the production lines at a random value
+ * from 0 to 100 shirts per day
 */
-void ShirtsProduction::setShirtsProduction1(int shirtsProduction) {
-    if (shirtsProduction < 0) {
-        return;
-    };
-    shirtsPerDayLine1 = shirtsProduction;
-};
+void ShirtsProduction::setProductionLines() {
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> distr(0, 100);
 
-/**
- * This function sets the number of shirts the line 2 can produce in one day
- * @param shirtsProduction - The number of shirts that this line can produce in one day
-*/
-void ShirtsProduction::setShirtsProduction2(int shirtsProduction) {
-    if (shirtsProduction < 0) {
-        return;
-    };
-    shirtsPerDayLine2 = shirtsProduction;
+    shirtsPerDayLine1 = distr(gen);
+    shirtsPerDayLine2 = distr(gen);
 };
 
 /**
@@ -70,14 +56,56 @@ void ShirtsProduction::setShirtsProduction2(int shirtsProduction) {
 */
 int ShirtsProduction::daysToProduce(int numberShirts) {
     if (numberShirts <= 0) {
+        logShirtsResult(0, numberShirts, "Line 1: []", "Line 2: []");
         return 0;
     };
-    int combinedProductionTime = shirtsPerDayLine1 + shirtsPerDayLine2;
-    if (combinedProductionTime == 0) {
-        // We don't want to divide by zero
-        return numeric_limits<int>::max();
+
+    stringstream line1;
+    stringstream line2;
+
+    int daysToProduce = 0;
+    int missingShirts = numberShirts;
+
+    line1 << "Line 1: [";
+    line2 << "Line 2: [";
+    while (missingShirts > 0) {
+        missingShirts -= (shirtsPerDayLine1 + shirtsPerDayLine2);
+        if (daysToProduce == 0) {
+            line1 << shirtsPerDayLine1;
+            line2 << shirtsPerDayLine2;
+        } else {
+            line1 << ", " << shirtsPerDayLine1;
+            line2 << ", " << shirtsPerDayLine2;
+        }
+        daysToProduce += 1;
+
+        // Next day
+        setProductionLines();
     };
-    return ceil(1.0 * numberShirts / combinedProductionTime);
+
+    line1 << "]";
+    line2 << "]";
+
+    logShirtsResult(daysToProduce, numberShirts, line1.str(), line2.str());
+    return daysToProduce;
+};
+
+/**
+ * This function logs the result for the shirt function
+ * @param daysToProduce - The number of days it took to produce those shirts
+ * @param shirts - The number of shirts produced
+ * @param line1 - String containing all the production of line 1 at different days
+ * @param line2 - String containing all the production of line 2 at different days
+*/
+void ShirtsProduction::logShirtsResult(int daysToProduce, int shirts, string line1, string line2) {
+    cout << endl << "- It took " << daysToProduce << " day";
+    if (daysToProduce != 1) {
+        cout << "s";
+    };
+    cout << " to produce " << shirts << " shirts." << endl;
+    cout << "Lines of production: " << endl;
+    cout << line1 << endl;
+    cout << line2 << endl;
 };
 
 #endif

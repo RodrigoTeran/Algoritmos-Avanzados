@@ -23,6 +23,7 @@ class SodaProduction {
         float containerHeightMeters;
 
         float getContainerMililiters();
+        void logSodasResult(int, float, float, float);
 
     public:
         SodaProduction();
@@ -84,11 +85,29 @@ float SodaProduction::getContainerMililiters() {
 int SodaProduction::maxSodasPerFill(float sodaMililiters) {
     if (sodaMililiters <= 0) {
         // We don't want to divide by zero
+        logSodasResult(0, containerWidthMeters, containerHeightMeters, sodaMililiters);
         return 0;
     };
     float containerMililiters = getContainerMililiters();
-    return floor(containerMililiters / sodaMililiters);
+    int maxSodas = floor(containerMililiters / sodaMililiters);
+    logSodasResult(maxSodas, containerWidthMeters, containerHeightMeters, sodaMililiters);
+    return maxSodas;
 
+};
+
+/**
+ * This function logs the result for the sodas function
+ * @param maxSodasProduced - The maximum number of sodas the container can fill
+ * @param width - The width of the container in meters
+ * @param height - The height of the container in meters
+ * @param sodaMililiters - The mililiters per soda
+*/
+void SodaProduction::logSodasResult(int maxSodasProduced, float width, float height, float sodaMililiters) {
+    cout << endl << "- The container can fill up to " << maxSodasProduced << " soda";
+    if (maxSodasProduced != 1) {
+        cout << "s";
+    };
+    cout << " of " << sodaMililiters << " mililiters in one fill, with these measurements: " <<  width << " mts width, " << height << " mts height." << endl;
 };
 
 #endif
