@@ -1,0 +1,61 @@
+esto es una prueba
+del algoritmo de
+hash string
+no se que mas
+poner en este archivo
+-----
+83
+-----
+lengthOfText: 83
+sizeOfColumn: 6
+remainder: 3
+# columns: 16
+e b   n n i 
+s a d o e v 
+t - e   r o 
+o d - s   [ 
+  e h e e [ 
+e l a   n [ 
+s   s q   [ 
+  a h u e [ 
+u l   e s [ 
+n g s   t [ 
+a o t m e [ 
+  r r a   [ 
+p i i s a [ 
+r t n - r [ 
+u m g p c [ 
+e o - o h [ 
+44
+130
+228
+203
+18
+27
+242
+30
+52
+55
+113
+224
+113
+43
+119
+16
+
+2C
+82
+E4
+CB
+12
+1B
+F2
+1E
+34
+37
+71
+E0
+71
+2B
+77
+10
