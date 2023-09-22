@@ -1,15 +1,17 @@
+Texto:
 esto es una prueba
 del algoritmo de
 hash string
 no se que mas
 poner en este archivo
------
-83
------
+
+---------
 lengthOfText: 83
 sizeOfColumn: 6
-remainder: 3
 # columns: 16
+---------
+
+Tabla:
 e b   n n i 
 s a d o e v 
 t - e   r o 
@@ -26,36 +28,9 @@ p i i s a [
 r t n - r [ 
 u m g p c [ 
 e o - o h [ 
-44
-130
-228
-203
-18
-27
-242
-30
-52
-55
-113
-224
-113
-43
-119
-16
 
-2C
-82
-E4
-CB
-12
-1B
-F2
-1E
-34
-37
-71
-E0
-71
-2B
-77
-10
+A[i] % 256:
+44 130 228 203 18 27 242 30 52 55 113 224 113 43 119 16 
+
+Result
+2C82E4CB	121BF21E	343771E0	712B7710	

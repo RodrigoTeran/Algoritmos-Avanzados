@@ -16,12 +16,23 @@
 
 using namespace std;
 
+/**
+ * This function helps us to get the file content and now what is going
+ * to be our n
+ * 
+ * @param text - The file content
+ * @param n - The number of columns we are going to use in our table
+*/
 void getData(string* text, int* n) {
     fstream newFile;
     stringstream streamText;
 
+    string fileName;
+
+    cin >> fileName;
+
     // open a file to perform read operation using file object.
-    newFile.open("./tests/files/datos.txt", ios::in); 
+    newFile.open("./tests/files/" + fileName, ios::in); 
     
     // Checking whether the file is open.
     if (newFile.is_open()) { 
@@ -42,6 +53,11 @@ void getData(string* text, int* n) {
     text->pop_back();
 };
 
+/**
+ * This function helps us print the table on console
+ * 
+ * @param matrix - The table to print
+*/
 void printResult(vector<vector<string> > *matrix) {
     for (int i = 0; i < matrix->size(); i++) {
         for (int j = 0; j < matrix->at(i).size(); j++) {

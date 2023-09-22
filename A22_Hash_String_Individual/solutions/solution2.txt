@@ -1,0 +1,38 @@
+Texto:
+Hola!, me llamo Rodrigo
+Teran. Estoy estudiando ITC
+en el Tec Campus Qro
+
+---------
+lengthOfText: 72
+sizeOfColumn: 4
+# columns: 20
+---------
+
+Tabla:
+H i u c 
+o g d   
+l o i C 
+a - a a 
+! T n m 
+, e d p 
+  r o u 
+m a   s 
+e n I   
+  . T Q 
+l   C r 
+l E - o 
+a s e [ 
+m t n [ 
+o o   [ 
+  y e [ 
+R   l [ 
+o e   [ 
+d s T [ 
+r t e [ 
+
+A[i] % 256:
+137 90 135 45 80 101 118 97 60 243 65 42 148 170 89 89 57 79 134 166 
+
+Result
+895A872D	50657661	3CF3412A	94AA5959	394F86A6	

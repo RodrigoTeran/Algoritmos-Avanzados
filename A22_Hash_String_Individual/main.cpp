@@ -1,5 +1,6 @@
 /**
- * This program 
+ * This program aims to "hash" a text file by creating an
+ * hexadecimal representation of the content of that file
  *
  * Author: Rodrigo Terán Hernández A01704108
  * Created: 21/09/2023
