@@ -36,7 +36,7 @@ void buildSuffixArray(string txt, vector<int> *suffixArr) {
     }
  
     int j = 0;
-    for(map<string, int>::iterator it = Map.begin(); it != Map.end(); ++it) {
+    for(map<string, int>::iterator it = Map.begin(); it != Map.end(); it++) {
         suffixArr->at(j) = it->second;
         j++;
     };
