@@ -1,0 +1,61 @@
+Archivo de transmisión 1
+70616e206465206e6172716e6a6150616e206465206e6172616e6a61
+
+Archivo de transmisión 2
+70616e206465206e6172716e6a6170616e206465206e6172716e6a6170616e206465206e6172716e6a6170616e206465206e6172716e6a6170616e206465206e6172716e6a6170616e206465206e6172716e6a61
+
+Archivo mcode 1
+16e61
+
+Archivo mcode 2
+737
+
+Archivo mcode 3
+17271
+
+T R A N S M I S S I O N 1
+
+mcode 1
+(false) Cadena no encontrada en la transmisión
+
+mcode 2
+(false) Cadena no encontrada en la transmisión
+
+mcode 3
+(true) Posición inicial: 17 Posición final: 21
+
+Código espejeado 6e6172716e6
+Posición inicial: 14 Posición final: 24
+
+T R A N S M I S S I O N 2
+
+mcode 1
+(false) Cadena no encontrada en la transmisión
+
+mcode 2
+(false) Cadena no encontrada en la transmisión
+
+mcode 3
+(true) Posición inicial: 17 Posición final: 21
+(true) Posición inicial: 45 Posición final: 49
+(true) Posición inicial: 73 Posición final: 77
+(true) Posición inicial: 101 Posición final: 105
+(true) Posición inicial: 129 Posición final: 133
+(true) Posición inicial: 157 Posición final: 161
+
+Código espejeado 6e6172716e6
+Posición inicial: 14 Posición final: 24
+
+Sub-String más largo: 70616e206465206e6172716e6a61
+
+Posiciones en la Transmisión 1
+Posición inicial: 0 Posición final: 27
+
+Posiciones en la Transmisión 2
+Posición inicial: 0 Posición final: 27
+Posición inicial: 28 Posición final: 55
+Posición inicial: 56 Posición final: 83
+Posición inicial: 84 Posición final: 111
+Posición inicial: 112 Posición final: 139
+Posición inicial: 140 Posición final: 167
+
