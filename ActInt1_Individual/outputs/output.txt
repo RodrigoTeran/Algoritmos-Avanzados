@@ -8,10 +8,10 @@ Archivo mcode 1
 16e61
 
 Archivo mcode 2
-737
+17271
 
 Archivo mcode 3
-17271
+737
 
 T R A N S M I S S I O N 1
 
@@ -19,10 +19,10 @@ mcode 1
 (false) Cadena no encontrada en la transmisión
 
 mcode 2
-(false) Cadena no encontrada en la transmisión
+(true) Posición inicial: 17 Posición final: 21
 
 mcode 3
-(true) Posición inicial: 17 Posición final: 21
+(false) Cadena no encontrada en la transmisión
 
 Código espejeado 6e6172716e6
 Posición inicial: 14 Posición final: 24
@@ -33,15 +33,15 @@ mcode 1
 (false) Cadena no encontrada en la transmisión
 
 mcode 2
-(false) Cadena no encontrada en la transmisión
-
-mcode 3
 (true) Posición inicial: 17 Posición final: 21
 (true) Posición inicial: 45 Posición final: 49
 (true) Posición inicial: 73 Posición final: 77
 (true) Posición inicial: 101 Posición final: 105
 (true) Posición inicial: 129 Posición final: 133
 (true) Posición inicial: 157 Posición final: 161
+
+mcode 3
+(false) Cadena no encontrada en la transmisión
 
 Código espejeado 6e6172716e6
 Posición inicial: 14 Posición final: 24
