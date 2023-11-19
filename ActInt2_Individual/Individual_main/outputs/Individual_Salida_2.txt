@@ -1,0 +1,43 @@
+Input: ./inputs/Individual_Entrada_2.txt
+===== Shortest distances between cities =====
+Between A and B
+A <-> B (11 km)
+
+Between A and C
+A <-> E <-> C (13 km)
+
+Between A and D
+A <-> E <-> C <-> D (20 km)
+
+Between A and E
+A <-> E (12 km)
+
+Between B and C
+B <-> E <-> C (4 km)
+
+Between B and D
+B <-> E <-> C <-> D (11 km)
+
+Between B and E
+B <-> E (3 km)
+
+Between C and D
+C <-> D (7 km)
+
+Between C and E
+C <-> E (1 km)
+
+Between D and E
+D <-> C <-> E (8 km)
+
+===== Minimum distance to travel to all cities =====
+Distance: 51km
+- Route:
+A -> B -> D -> C -> E -> A
+
+===== Flow =====
+Max flow: 61
+
+===== New central =====
+Minimum distance to the nearest center: (B): 186.27130750601393 km
+Coordinates: (234, 456)

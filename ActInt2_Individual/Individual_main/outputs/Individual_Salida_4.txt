@@ -1,0 +1,22 @@
+Input: ./inputs/Individual_Entrada_4.txt
+===== Shortest distances between cities =====
+Between A and B
+A <-> B (1 km)
+
+Between A and C
+A <-> C (1 km)
+
+Between B and C
+B <-> C (1 km)
+
+===== Minimum distance to travel to all cities =====
+Distance: 3km
+- Route:
+A -> B -> C -> A
+
+===== Flow =====
+Max flow: 2
+
+===== New central =====
+Minimum distance to the nearest center: (A): 0.0 km
+Coordinates: (0, 0)
